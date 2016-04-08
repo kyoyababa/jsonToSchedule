@@ -99,7 +99,6 @@ header {
   z-index: 0;
   padding: 50px 24px;
   background-color: #F6F6F6;
-  background-image: url(http://lorempixel.com/360/720/city);
   background-position: center center;
   -webkit-background-size: cover;
   -o-background-size: cover;
@@ -107,6 +106,10 @@ header {
   text-align: center;
   font-style: italic;
   color: #FFFFFF; }
+  header.image-1 {
+    background-image: url(../images/image1.jpg); }
+  header.image-2 {
+    background-image: url(../images/image2.jpg); }
   header:before {
     content: '';
     position: fixed;

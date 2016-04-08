@@ -39,3 +39,4 @@ const WEEKDAY = [
 ];
 
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
+const MS_PER_MIN = 1000 * 60;

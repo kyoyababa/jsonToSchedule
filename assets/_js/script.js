@@ -1,5 +1,10 @@
 jQuery(function($) {
 
+  if ( !window.navigator.onLine ) {
+    alert('Network is unavailable.');
+    return false;
+  }
+
   // major consts
   const SHOWN_CLASS     = 'shown';
   const HIDDEN_CLASS    = 'hidden';
@@ -11,6 +16,7 @@ jQuery(function($) {
   const GMAP_ENDPOINT   = 'https://maps.googleapis.com/maps/api/staticmap?';
 
   // major DOMs
+  var $header           = $('#jsi-header');
   var $mainPage         = $('#jsi-main-wrapper');
   var $firstPage        = $('#' + FIRST_PAGE_ID);
   var $openTrigger      = $('#jsi-open-trigger');
@@ -29,6 +35,8 @@ jQuery(function($) {
   var $removeShownClass = function(element) {
     element.removeClass(SHOWN_CLASS);
   }
+
+  $
 
   $.getJSON('./assets/js/schedule.json', function(data) {
     if ( data.googleMapAPIKey ) {
@@ -68,11 +76,11 @@ jQuery(function($) {
           return false;
         }
         if ( schedules[i][SCHEDULE_D[1]] == DATE_ERROR || schedules[i][SCHEDULE_D[2]] == DATE_ERROR ) {
-          alert('ERROR: you set wrong data / time in schedule No.' + (i+1) + '. Start and End value must be specified.');
+          alert('ERROR: you set wrong data / time in schedule No.' + (i+1) + '(' + schedules[i][SCHEDULE_D[0]] + ')' + '. Start and End value must be specified.');
           return false;
         }
         if ( schedules[i][SCHEDULE_D[1]] > schedules[i][SCHEDULE_D[2]] ) {
-          alert('ERROR: you set earlier date as "Start" than "End" in schedule No.' + (i+1));
+          alert('ERROR: you set earlier date as "Start" than "End" in schedule No.' + (i+1) + '(' + schedules[i][SCHEDULE_D[0]] + ')');
           return false;
         }
 
@@ -89,12 +97,18 @@ jQuery(function($) {
     $insertDateTextsToFirstPage = function (){
       var minimumDateText = WEEKDAY[minimumDate.getDay()] + ' / ' + MONTH_NAMES[minimumDate.getMonth()] + ' ' + minimumDate.getDate();
       var maximumDateText = WEEKDAY[maximumDate.getDay()] + ' / ' + MONTH_NAMES[maximumDate.getMonth()] + ' ' + maximumDate.getDate();
+
+      if ( Math.floor(Math.random()*10) % 2 == 0 ) {
+        $header.addClass('image-1');
+      } else {
+        $header.addClass('image-2');
+      }
       $('#jsi-from-date').text(minimumDateText);
       $('#jsi-to-date').text(maximumDateText);
     }
 
     $renderingBasicDOMs = function () {
-      var tourDates = Math.floor((maximumDate - minimumDate + 1) / MS_PER_DAY) + 1;
+      var tourDates = Math.floor((maximumDate - minimumDate) / MS_PER_DAY) + 2;
       var currentDate = new Date(minimumDate);
 
       for (var i = 0; i < tourDates; i++) {
@@ -159,7 +173,7 @@ jQuery(function($) {
                 }
                 endTime += _this[SCHEDULE_D[2]].getMinutes();
 
-            var duration = (_this[SCHEDULE_D[2]] - _this[SCHEDULE_D[1]]) / 1000 / 60;
+            var duration = (_this[SCHEDULE_D[2]] - _this[SCHEDULE_D[1]]) / MS_PER_MIN;
 
             var $insert =  '<li data-startTime="' + _this[SCHEDULE_D[1]] +'" data-endTime="' + _this[SCHEDULE_D[2]] + '" data-place="' + _this[SCHEDULE_D[6]] + '">';
 
@@ -206,7 +220,7 @@ jQuery(function($) {
         var thisStartTime = $li.attr('data-startTime');
 
         if ( prevEndTime && thisStartTime ) {
-          var duration = (new Date(thisStartTime) - new Date(prevEndTime)) / 1000 / 60;
+          var duration = (new Date(thisStartTime) - new Date(prevEndTime)) / MS_PER_MIN;
         } else {
           var duration = '-';
         }
