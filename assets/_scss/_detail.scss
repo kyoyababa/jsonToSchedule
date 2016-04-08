@@ -1,0 +1,223 @@
+main {
+  z-index: 1;
+  left: 100%;
+
+  &.shown {
+    left: 0;
+  }
+}
+
+main > section {
+  // NOTE: describe 'auto' for unsupported browsers
+  overflow: auto;
+  overflow: scroll;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F6F6F6;
+  -webkit-overflow-scrolling: touch;
+
+  > p:last-child {
+    border-top: 1px solid #DDDDDD;
+  }
+}
+
+main > section > p > a,
+main > section > ol > li > p > a {
+  display: block;
+  padding: 8px 12px;
+  &:before {
+    vertical-align: middle;
+  }
+}
+
+main > .ps-first-page > ol > li,
+main > .ps-second-page > ol > li {
+  &:nth-child(6n-5) {
+    background: lighten(#F16745, 15%);
+  }
+  &:nth-child(6n-4) {
+    background: lighten(#FFC65D, 15%);
+  }
+  &:nth-child(6n-3) {
+    background: lighten(#7BC8A4, 15%);
+  }
+  &:nth-child(6n-2) {
+    background: lighten(#4CC3D9, 15%);
+  }
+  &:nth-child(6n-1) {
+    background: lighten(#93648D, 15%);
+  }
+  &:nth-child(6n) {
+    background: lighten(#406841, 20%);
+  }
+}
+
+main > .ps-first-page {
+  background-color: rgba(#000000, 0.5);
+  > p {
+    background-color: #F6F6F6;
+  }
+}
+
+main > .ps-first-page > ol {
+  > li {
+    position: relative;
+    padding: 8px 12px;
+
+    > a > dl {
+      overflow: hidden;
+      padding-right: 28px;
+      font-style: italic;
+      color: #222222;
+      > dt {
+        float: left;
+        font-weight: bold;
+        font-size: 26px;
+      }
+      > dd {
+        float: right;
+        margin-top: 8px;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      -webkit-transform: translate(0, -50%);
+         -moz-transform: translate(0, -50%);
+          -ms-transform: translate(0, -50%);
+           -o-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+    }
+  }
+}
+
+
+
+main > .ps-second-page {
+  left: 100%;
+  &.shown {
+    left: 0;
+  }
+
+  > ol > li {
+    display: none;
+    &.shown {
+      display: block;
+    }
+  }
+
+  > ol > li > h2 {
+    padding: 8px 12px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 26px;
+    color: #222222;
+  }
+
+  > ol > li > ul,
+  > ol > li > p {
+    background-color: #F6F6F6;
+  }
+
+  > ol > li > ul > li {
+    position: relative;;
+    padding: 20px 10px;
+    > * + * {
+      margin-top: 4px;
+    }
+    &:first-child > .ps-blank {
+      display: none;
+    }
+    > .ps-blank {
+      overflow: hidden;
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      display: inline-block;
+      width: 75%;
+      padding: 4px 8px;
+      background: #DDDDDD;
+      font-style: italic;
+      font-size: 12px;
+      color: #666666;
+              transform: translate(-50%, 0);
+           -o-transform: translate(-50%, 0);
+          -ms-transform: translate(-50%, 0);
+         -moz-transform: translate(-50%, 0);
+      -webkit-transform: translate(-50%, 0);
+      > span {
+        vertical-align: -2px;
+      }
+      > span + span {
+        padding-left: 10px;
+      }
+      > a {
+        float: right;
+        padding: 2px 6px;
+        border-radius: 4px;
+        background: #4CC3D9;
+        line-height: 1em;
+        color: #FFFFFF;
+        &.hidden {
+          display: none;
+        }
+      }
+    }
+    > h3 {
+      font-size: 20px;
+    }
+    > .ps-time {
+      // this is time appearance
+      text-align: right;
+      font-style: italic;
+      font-size: 14px;
+      color: #666666;
+    }
+    > address {
+      // TODO:
+    }
+    > .ps-map {
+      position: relative;
+      background-color: rgba(#000000, 0.5);
+    }
+    > .ps-map > img {
+      width: 100%;
+    }
+    > .ps-map > a {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      padding: 8px;
+      background-color: rgba(#000000, 0.5);
+
+      &:before {
+        content: '';
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-image: url(../images/window.svg);
+        background-size: 100%;
+      }
+    }
+    > .ps-description {
+      padding: 4px;
+      margin-top: 4px;
+      background-color: #FFFFFF;
+      word-break: break-word;
+      font-family: courier, Arial, sans-serif;
+      font-size: 12px;
+    }
+
+    + li {
+      border-top: 1px solid #DDDDDD;
+    }
+  }
+}

@@ -27,9 +27,7 @@ gulp.task('cssmin', function () {
 gulp.task('uglify', function() {
   gulp.src(['assets/_js/**/*.js', '!assets/js/**/*'])
     .pipe(plumber())
-    .pipe(sourcemaps.init())
     .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('assets/js'));
 });
 

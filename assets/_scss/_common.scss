@@ -1,0 +1,63 @@
+body {
+  overflow: hidden;
+  background-color: #F6F6F6;
+  color: #404040;
+}
+
+body,
+body > * {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+a {
+  color: #4CC3D9;
+}
+
+.cs-button {
+  padding: 8px 16px;
+  border: 1px solid #4CC3D9;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  font-size: 20px;
+  box-shadow: 0 0 2px #666666;
+  color: #4CC3D9;
+}
+
+.cs-button.primary {
+  background-color: #4CC3D9;
+  color: #FFFFFF;
+}
+
+.cs-prev:before,
+.cs-next:after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  -webkit-background-size: 100%;
+       -o-background-size: 100%;
+          background-size: 100%;
+}
+
+.cs-prev:before {
+  margin-right: 6px;
+  background-image: url(../images/arrow-left.svg);
+}
+
+.cs-next:after {
+  margin-left: 6px;
+  background-image: url(../images/arrow-right.svg);
+}
+
+.cs-prev.white:before {
+  background-image: url(../images/arrow-left-white.svg);
+}
+
+.cs-next.white:after {
+  background-image: url(../images/arrow-right-white.svg);
+}

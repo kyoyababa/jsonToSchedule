@@ -9,16 +9,21 @@
   background-color: transparent;
   line-height: 1.25;
   font-size: 100%;
-  font-family: 'Lato', 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  box-sizing: border-box;
-  vertical-align: baseline;
+  font-family: 'STHeitiJ-Light', 'STHeitiK-Light','AppleGothic', 'Lato', 'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic ProN', Arial, sans-serif;
+  font-weight: inherit;
+  font-style: inherit;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: bottom;
   text-decoration: none;
-  transition: 300ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+  color: inherit;
+  transition: 450ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
 }
 
 body {
+  font-style: normal;
+  font-weight: normal;
   -webkit-text-size-adjust: 100%;
 }
 

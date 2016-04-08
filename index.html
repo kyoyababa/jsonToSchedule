@@ -2,33 +2,35 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width = device-width, initial-scale = 1.0">
+	<meta name="robots" content="nofollow, noindex">
 	<title class="jsc-app-title"></title>
-	<!-- <link rel="stylesheet" href="./assets/css/style.css">
-	<link rel="stylesheet" href="./assets/_css/style.css"> -->
-	<link rel="stylesheet" href="./assets/_css/hoge.css">
-	<link rel="icon" href="./favicon.ico">
-	<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+	<link rel="stylesheet" href="./assets/css/style.css">
 	<script src="./assets/js/vendor/jquery-2.2.2.js"></script>
 	<script src="./assets/js/constants.js"></script>
-	<!-- <script src="./assets/js/script.js"></script> -->
-	<script src="./assets/_js/script.js"></script>
+	<script src="./assets/js/script.js"></script>
 </head>
 <body>
 
 <header>
 	<h1 class="jsc-app-title"></h1>
 	<p><date id="jsi-from-date"></date> - <date id="jsi-to-date"></date></p>
-	<p><a href="javascript: void(0);" class="cs-button primary l">Open Schedule</a>
+	<p><a href="javascript: void(0);" id="jsi-open-trigger" class="cs-button primary l cs-next white"></a>
 </header>
 
-<main>
-	<section id="jsi-first-page">
-		<ol>
-		</ol>
+<main id="jsi-main-wrapper">
+	<section id="jsi-first-page" class="ps-first-page">
+		<p><a href="javascript: void(0);" class="cs-prev jsc-back"></a></p>
+		<ol></ol>
+		<p><a href="javascript: void(0);" class="cs-prev jsc-back"></a></p>
 	</section>
 
-	<section id="jsi-second-page">
+	<section id="jsi-second-page" class="ps-second-page">
+		<p><a href="javascript: void(0);" class="cs-prev jsc-back"></a></p>
+		<ol></ol>
+		<p><a href="javascript: void(0);" class="cs-prev jsc-back"></a></p>
 	</section>
+</main>
 
 </body>
 </html>
