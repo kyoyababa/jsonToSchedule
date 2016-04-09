@@ -2,38 +2,39 @@
   "appTitle":        "2016 Tour Schedules in NYC",
   "triggerText":     "Open Schedules",
   "googleMapAPIKey": "AIzaSyDhUpQU43KfFdTqhZvMKrMdIMuvPWCHXA4",
+  "flickrAPIKey":    "f58a7cd0d09f006587a0a17b06594cfb",
 
   "schedules": [
     {
-      "Title":       "NRT Lunch",
+      "Title":       "Narita Airport Lunch",
       "Start":       "05/01/2016 12:00",
       "End":         "05/01/2016 13:00",
       "Description": "",
       "Where":       "Narita Airport, Japan"
     },
     {
-      "Title":       "NRT Watching",
-      "Start":       "05/01/2016 13:00",
-      "End":         "05/01/2016 15:00",
-      "Description": "",
-      "Where":       "Narita Airport, Japan"
-    },
-    {
-      "Title":       "Boarding on the air plane",
+      "Title":       "Boarding on the air plane at Narita Airport",
       "Start":       "05/01/2016 15:00",
       "End":         "05/01/2016 17:00",
       "Description": "",
       "Where":       "Narita Airport, Japan"
     },
     {
-      "Title":       "the Statue of Liberty & Ellis Island",
+      "Title":       "the Statue of Liberty",
       "Start":       "05/02/2016 09:00",
-      "End":         "05/02/2016 13:30",
+      "End":         "05/02/2016 11:30",
       "Description": "this is our first event!",
       "Where":       "Battery Park, New York, NY"
     },
     {
-      "Title":       "MoMA",
+      "Title":       "Ellis Island",
+      "Start":       "05/02/2016 11:30",
+      "End":         "05/02/2016 13:30",
+      "Description": "this is our first event!",
+      "Where":       "Ellis Island, New York, NY"
+    },
+    {
+      "Title":       "MoMA, The Museum of Modern Art, New York",
       "Start":       "05/02/2016 14:30",
       "End":         "05/02/2016 17:30",
       "Description": "",
@@ -61,14 +62,14 @@
       "Where":       "1 W 72nd St, New York, NY 10023"
     },
     {
-      "Title":       "American National Museum",
+      "Title":       "American Museum of Natural History",
       "Start":       "05/03/2016 09:30",
       "End":         "05/03/2016 10:00",
       "Description": "",
       "Where":       "Central Park West & 79th St, New York, NY 10024"
     },
     {
-      "Title":       "Central Park",
+      "Title":       "Central Park, New York",
       "Start":       "05/03/2016 10:00",
       "End":         "05/03/2016 11:00",
       "Description": "",
@@ -82,7 +83,7 @@
       "Where":       "1071 5th Ave, New York, NY 10128"
     },
     {
-      "Title":       "Apple Store",
+      "Title":       "Apple Store, New York",
       "Start":       "05/03/2016 14:00",
       "End":         "05/03/2016 15:00",
       "Description": "",
@@ -110,14 +111,14 @@
       "Where":       "Times Square, Manhattan, NY 10036"
     },
     {
-      "Title":       "Church of the Times Square",
+      "Title":       "Times Square Church",
       "Start":       "05/03/2016 17:00",
       "End":         "05/03/2016 18:00",
       "Description": "",
       "Where":       "237 W 51st St, New York, NY 10019"
     },
     {
-      "Title":       "Jazz Live: SNARKY PUPPY",
+      "Title":       "SNARKY PUPPY",
       "Start":       "05/03/2016 20:00",
       "End":         "05/03/2016 22:00",
       "Description": "will called tickets would able to received from 19:00?",
@@ -152,14 +153,14 @@
       "Where":       "Ground Floor, 58 W 129th St, New York, NY 10027"
     },
     {
-      "Title":       "Jazz Live: Peter Bernstein",
+      "Title":       "Peter Bernstein",
       "Start":       "05/04/2016 22:30",
-      "End":         "05/05/2016 10:30",
+      "End":         "05/05/2016 00:30",
       "Description": "will called tickets would able to received from 21:15?",
       "Where":       "Village Vanguard, 178 7th Ave S, New York, NY 10014, United States"
     },
     {
-      "Title":       "Brooklyn Bridge Tour",
+      "Title":       "Brooklyn Bridge",
       "Start":       "05/05/2016 09:00",
       "End":         "05/05/2016 10:30",
       "Description": "",
@@ -173,7 +174,7 @@
       "Where":       "8 Spruce St, New York, NY 10038"
     },
     {
-      "Title":       "China Town New York",
+      "Title":       "China Town, New York",
       "Start":       "05/05/2016 11:00",
       "End":         "05/05/2016 14:00",
       "Description": "",
@@ -208,28 +209,28 @@
       "Where":       "767 Fifth Ave, at 58th Street, New York City, NY 10153"
     },
     {
-      "Title":       "Chelsea Hotel New York",
+      "Title":       "Chelsea Hotel, New York",
       "Start":       "05/05/2016 17:00",
       "End":         "05/05/2016 17:30",
       "Description": "",
       "Where":       "222 W 23rd St, New York, NY 10011"
     },
     {
-      "Title":       "911 memorial",
+      "Title":       "911 Memorial",
       "Start":       "05/05/2016 17:30",
       "End":         "05/05/2016 18:00",
       "Description": "",
       "Where":       "180 Greenwich St, New York, NY 10007"
     },
     {
-      "Title":       "world trade center",
+      "Title":       "World Trade Center",
       "Start":       "05/05/2016 18:00",
       "End":         "05/05/2016 19:00",
       "Description": "",
       "Where":       "World Trade Center, New York, NY"
     },
     {
-      "Title":       "Wall City",
+      "Title":       "Wall City, New York",
       "Start":       "05/05/2016 19:00",
       "End":         "05/05/2016 20:00",
       "Description": "",
@@ -243,14 +244,14 @@
       "Where":       "273 Bleecker St, New York, NY 10014"
     },
     {
-      "Title":       "Jazz Live: Ron Carter 79th Birthday",
+      "Title":       "Ron Carter",
       "Start":       "05/05/2016 22:30",
-      "End":         "05/06/2016 10:30",
-      "Description": "will called tickets would able to received from 21:30?",
+      "End":         "05/06/2016 00:30",
+      "Description": "Ron Carter 79th Birthday. will called tickets would able to received from 21:30?",
       "Where":       "Blue Note, 131 W 3rd St, New York, NY 10012, United States"
     },
     {
-      "Title":       "EU building",
+      "Title":       "United Nations Headquarters",
       "Start":       "05/06/2016 09:30",
       "End":         "05/06/2016 10:00",
       "Description": "",
@@ -320,7 +321,7 @@
       "Where":       "555 W 18th St, New York, NY 10011"
     },
     {
-      "Title":       "Jazz Live: Shemakia Copeland",
+      "Title":       "Shemakia Copeland",
       "Start":       "05/06/2016 20:30",
       "End":         "05/06/2016 22:30",
       "Description": "will called tickets would able to received from 19:15?",
@@ -334,7 +335,7 @@
       "Where":       "3 Brewster Rd, Newark, NJ 07114"
     },
     {
-      "Title":       "Meet with Walter Bishop.Jr's Wife",
+      "Title":       "Walter Bishop.Jr's Wife",
       "Start":       "05/08/2016 00:00",
       "End":         "05/08/2016 00:01",
       "Description": "だいすけアップデート待ち",

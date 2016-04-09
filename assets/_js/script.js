@@ -43,6 +43,10 @@ jQuery(function($) {
       var gMapAPIKey = data.googleMapAPIKey;
     }
 
+    if ( data.flickrAPIKey ) {
+      var flickrAPIKey = data.flickrAPIKey;
+    }
+
     $insertAppTitle = function() {
       $('.jsc-app-title').text(data.appTitle);
     }
@@ -98,11 +102,6 @@ jQuery(function($) {
       var minimumDateText = WEEKDAY[minimumDate.getDay()] + ' / ' + MONTH_NAMES[minimumDate.getMonth()] + ' ' + minimumDate.getDate();
       var maximumDateText = WEEKDAY[maximumDate.getDay()] + ' / ' + MONTH_NAMES[maximumDate.getMonth()] + ' ' + maximumDate.getDate();
 
-      if ( Math.floor(Math.random()*10) % 2 == 0 ) {
-        $header.addClass('image-1');
-      } else {
-        $header.addClass('image-2');
-      }
       $('#jsi-from-date').text(minimumDateText);
       $('#jsi-to-date').text(maximumDateText);
     }
@@ -110,6 +109,13 @@ jQuery(function($) {
     $renderingBasicDOMs = function () {
       var tourDates = Math.floor((maximumDate - minimumDate) / MS_PER_DAY) + 2;
       var currentDate = new Date(minimumDate);
+
+      var $basicDOM =  '<p><a href="javascript: void(0);" class="cs-prev jsc-back"></a></p>';
+          $basicDOM += '<ol></ol>';
+          $basicDOM += '<p><a href="javascript: void(0);" class="cs-prev jsc-back"></a></p>';
+
+      $firstPage.append($basicDOM);
+      $secondPage.append($basicDOM);
 
       for (var i = 0; i < tourDates; i++) {
         if ( i != 0 ) {
@@ -180,26 +186,23 @@ jQuery(function($) {
                 $insert +=   '<p class="ps-blank">';
                 $insert +=     '<span>blank time:</span>';
                 $insert +=     '<span class="jsc-blank"></span>';
-                $insert +=     '<a href="javascript: void(0);" class="jsc-root" target="_blank">root</a>'
+                $insert +=     '<a href="javascript: void(0);" class="jsc-root" target="_blank">Open Route</a>'
                 $insert +=   '</p>';
 
                 $insert +=   '<h3>' + _this[SCHEDULE_D[0]] + '</h3>';
                 $insert +=   '<p class="ps-time"><time>' + startTime + '</time> - <time>' + endTime + '</time> (' + duration + 'mins)</p>';
 
-                if ( _this[SCHEDULE_D[6]] ) {
-                  $insert +=   '<address>' + _this[SCHEDULE_D[6]] + '</address>';
-                }
-
-                var $insertGMapURL = function(center, zoom, size, markers, sensor, key) {
-                  return GMAP_ENDPOINT + 'center=' + center + '&zoom=' + zoom + '&size=' + size + '&markers=' + markers + '&sensor=' + sensor + '&key=' + key
-                }
-
                 if ( gMapAPIKey && _this[SCHEDULE_D[6]] ) {
-                  $insert += '<p class="ps-map">';
-                  $insert += '<img src="' + $insertGMapURL(_this[SCHEDULE_D[6]], 14, '640x380', _this[SCHEDULE_D[6]], false, gMapAPIKey) + '">';
-                  $insert += '<a href="https://www.google.co.jp/maps/place/' + _this[SCHEDULE_D[6]] + '" target="_blank"></a>'
-                  $insert += '</p>';
+                  var $mapLink = '<a href="https://www.google.co.jp/maps/place/' + _this[SCHEDULE_D[6]] + '" target="_blank">Open Map</a>';
+                } else {
+                  var $mapLink = null;
                 }
+
+                if ( _this[SCHEDULE_D[6]] ) {
+                  $insert +=   '<address>' + _this[SCHEDULE_D[6]] + $mapLink + '</address>';
+                }
+
+                $insert +=   '<p class="ps-image jsc-flickr-image"></p>';
 
                 if ( _this[SCHEDULE_D[5]] ) {
                   $insert +=   '<p class="ps-description">' + _this[SCHEDULE_D[5]] + '</p>';
@@ -247,6 +250,38 @@ jQuery(function($) {
       });
     }
 
+    $insertFlickrImage = function() {
+      $('.jsc-flickr-image').each(function() {
+        var $imageElement = $(this);
+        var query = $imageElement.parent('li').find('h3').text();
+
+        if ( query ) {
+          $.ajax({
+            type: 'GET',
+            url: 'https://www.flickr.com/services/rest/',
+            data: {
+              format: 'json',
+              method: 'flickr.photos.search',
+              api_key: flickrAPIKey,
+              sort: 'interestingness-desc',
+              tags: query,
+              per_page: '1',
+            },
+            dataType: 'jsonp',
+            jsonp: 'jsoncallback',
+            success: function(data){
+              if ( data.stat == 'ok' && data.photos.photo.length > 0 ) {
+                var photo = data.photos.photo[0];
+                var path = 'http://farm' + photo.farm + '.static.flickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret + '_m.jpg';
+
+                $imageElement.append('<img src="' + path + '" alt="">');
+              }
+            }
+          });
+        }
+      });
+    }
+
     $openFirstPage = function() {
       $openTrigger.click(function() {
         setTimeout(function() {
@@ -259,6 +294,10 @@ jQuery(function($) {
       $firstPage.find('ol').find('li').click(function() {
         var indexMonth = $(this).data('month');
         var indexDay = $(this).data('day');
+
+        $secondPage.animate({
+          scrollTop: 0,
+        }, 0);
 
         $secondPage.find('ol').find('li').each(function() {
           if ( $(this).data('month') == indexMonth && $(this).data('day') == indexDay ) {
@@ -299,6 +338,7 @@ jQuery(function($) {
       $insertDateTextsToFirstPage();
       $renderingBasicDOMs();
       $renderingEachScheduleDetail();
+      $insertFlickrImage();
       $calculateBlankTimes();
       $rootHrefDispatcher();
 

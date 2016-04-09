@@ -28,7 +28,7 @@ main > section {
 main > section > p > a,
 main > section > ol > li > p > a {
   display: block;
-  padding: 8px 12px;
+  padding: 12px;
   &:before {
     vertical-align: middle;
   }
@@ -173,6 +173,7 @@ main > .ps-second-page {
     > h3 {
       font-size: 20px;
     }
+
     > .ps-time {
       // this is time appearance
       text-align: right;
@@ -180,33 +181,18 @@ main > .ps-second-page {
       font-size: 14px;
       color: #666666;
     }
-    > address {
-      // TODO:
-    }
-    > .ps-map {
-      position: relative;
-      background-color: rgba(#000000, 0.5);
-    }
-    > .ps-map > img {
-      width: 100%;
-    }
-    > .ps-map > a {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: block;
-      padding: 8px;
-      background-color: rgba(#000000, 0.5);
 
-      &:before {
-        content: '';
-        display: block;
-        width: 16px;
-        height: 16px;
-        background-image: url(../images/window.svg);
-        background-size: 100%;
-      }
+    > address > a {
+      margin-left: 6px;
+      font-size: 13px;
+      font-style: italic;
+      text-decoration: underline;
     }
+
+    > .ps-image {
+      text-align: center;
+    }
+
     > .ps-description {
       padding: 4px;
       margin-top: 4px;

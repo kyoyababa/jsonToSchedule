@@ -100,16 +100,13 @@ header {
   padding: 50px 24px;
   background-color: #F6F6F6;
   background-position: center center;
+  background-image: url(../images/image.jpg);
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
   font-style: italic;
   color: #FFFFFF; }
-  header.image-1 {
-    background-image: url(../images/image1.jpg); }
-  header.image-2 {
-    background-image: url(../images/image2.jpg); }
   header:before {
     content: '';
     position: fixed;
@@ -164,7 +161,7 @@ main > section {
 main > section > p > a,
 main > section > ol > li > p > a {
   display: block;
-  padding: 8px 12px; }
+  padding: 12px; }
   main > section > p > a:before,
   main > section > ol > li > p > a:before {
     vertical-align: middle; }
@@ -285,25 +282,13 @@ main > .ps-second-page {
       font-style: italic;
       font-size: 14px;
       color: #666666; }
-    main > .ps-second-page > ol > li > ul > li > .ps-map {
-      position: relative;
-      background-color: rgba(0, 0, 0, 0.5); }
-    main > .ps-second-page > ol > li > ul > li > .ps-map > img {
-      width: 100%; }
-    main > .ps-second-page > ol > li > ul > li > .ps-map > a {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      display: block;
-      padding: 8px;
-      background-color: rgba(0, 0, 0, 0.5); }
-      main > .ps-second-page > ol > li > ul > li > .ps-map > a:before {
-        content: '';
-        display: block;
-        width: 16px;
-        height: 16px;
-        background-image: url(../images/window.svg);
-        background-size: 100%; }
+    main > .ps-second-page > ol > li > ul > li > address > a {
+      margin-left: 6px;
+      font-size: 13px;
+      font-style: italic;
+      text-decoration: underline; }
+    main > .ps-second-page > ol > li > ul > li > .ps-image {
+      text-align: center; }
     main > .ps-second-page > ol > li > ul > li > .ps-description {
       padding: 4px;
       margin-top: 4px;
