@@ -1,24 +1,5 @@
-main {
-  z-index: 1;
-  left: 100%;
-
-  &.shown {
-    left: 0;
-  }
-}
-
 main > section {
-  // NOTE: describe 'auto' for unsupported browsers
-  overflow: auto;
-  overflow: scroll;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   background-color: #F6F6F6;
-  -webkit-overflow-scrolling: touch;
 
   > p:last-child {
     border-top: 1px solid #DDDDDD;
@@ -34,96 +15,76 @@ main > section > ol > li > p > a {
   }
 }
 
-main > .ps-first-page > ol > li,
-main > .ps-second-page > ol > li {
-  &:nth-child(6n-5) {
-    background: lighten(#F16745, 15%);
-  }
-  &:nth-child(6n-4) {
-    background: lighten(#FFC65D, 15%);
-  }
-  &:nth-child(6n-3) {
-    background: lighten(#7BC8A4, 15%);
-  }
-  &:nth-child(6n-2) {
-    background: lighten(#4CC3D9, 15%);
-  }
-  &:nth-child(6n-1) {
-    background: lighten(#93648D, 15%);
-  }
-  &:nth-child(6n) {
-    background: lighten(#406841, 20%);
-  }
+main > h1 {
+  padding: 12px 12px 8px;
+  text-align: center;
+  font-style: italic;
+  color: #666666;
 }
 
-main > .ps-first-page {
-  background-color: rgba(#000000, 0.5);
-  > p {
-    background-color: #F6F6F6;
-  }
-}
-
-main > .ps-first-page > ol {
-  > li {
-    position: relative;
-    padding: 8px 12px;
-
-    > a > dl {
-      overflow: hidden;
-      padding-right: 28px;
-      font-style: italic;
-      color: #222222;
-      > dt {
-        float: left;
-        font-weight: bold;
-        font-size: 26px;
-      }
-      > dd {
-        float: right;
-        margin-top: 8px;
-      }
-    }
-
-    &:after {
-      position: absolute;
-      top: 50%;
-      right: 12px;
-      -webkit-transform: translate(0, -50%);
-         -moz-transform: translate(0, -50%);
-          -ms-transform: translate(0, -50%);
-           -o-transform: translate(0, -50%);
-              transform: translate(0, -50%);
-    }
-  }
-}
-
-
-
-main > .ps-second-page {
-  left: 100%;
-  &.shown {
-    left: 0;
-  }
-
+main > .ps-schedules {
   > ol > li {
-    display: none;
-    &.shown {
-      display: block;
-    }
+    display: block;
   }
 
   > ol > li > h2 {
-    padding: 8px 12px;
-    text-align: center;
+    padding: 12px 12px 8px;
     font-style: italic;
     font-weight: bold;
     font-size: 26px;
     color: #222222;
+    &:after {
+      content: '';
+      opacity: 0.75;
+      float: right;
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      background-image: url(../images/arrow-down.svg);
+      background-size: 100%;
+      vertical-align: -5px;
+    }
+  }
+  > ol > li.shown > h2:after {
+    background-image: url(../images/arrow-top.svg);
   }
 
-  > ol > li > ul,
-  > ol > li > p {
-    background-color: #F6F6F6;
+  $HUE_BASE_COLOR: lighten(#F16745, 25%);
+
+  > ol > li {
+    @for $i from 1 through 10 {
+      &:nth-child(#{10n-$i}) > h2 {
+        background-color: adjust-hue($HUE_BASE_COLOR, 50deg * $i);
+      }
+    }
+  }
+
+  > ol > li > ul {
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    padding-left: 20px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 20px;
+    }
+  }
+
+  > ol > li.shown > ul {
+    height: auto;
+  }
+
+  > ol > li {
+    @for $i from 1 through 10 {
+      &:nth-child(#{10n-$i}) > ul:before {
+        background-color: adjust-hue($HUE_BASE_COLOR, 50deg * $i);
+      }
+    }
   }
 
   > ol > li > ul > li {
@@ -138,7 +99,7 @@ main > .ps-second-page {
     > .ps-blank {
       overflow: hidden;
       position: absolute;
-      top: -12px;
+      top: -14px;
       left: 50%;
       display: inline-block;
       width: 75%;
@@ -147,27 +108,20 @@ main > .ps-second-page {
       font-style: italic;
       font-size: 12px;
       color: #666666;
-              transform: translate(-50%, 0);
-           -o-transform: translate(-50%, 0);
-          -ms-transform: translate(-50%, 0);
-         -moz-transform: translate(-50%, 0);
-      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
       > span {
-        vertical-align: -2px;
+        vertical-align: -4px;
       }
       > span + span {
         padding-left: 10px;
       }
       > a {
         float: right;
-        padding: 2px 6px;
+        padding: 6px 6px 2px;
         border-radius: 4px;
         background: #4CC3D9;
         line-height: 1em;
         color: #FFFFFF;
-        &.hidden {
-          display: none;
-        }
       }
     }
     > h3 {
@@ -175,7 +129,6 @@ main > .ps-second-page {
     }
 
     > .ps-time {
-      // this is time appearance
       text-align: right;
       font-style: italic;
       font-size: 14px;
@@ -184,6 +137,7 @@ main > .ps-second-page {
 
     > address > a {
       margin-left: 6px;
+      vertical-align: 1px;
       font-size: 13px;
       font-style: italic;
       text-decoration: underline;

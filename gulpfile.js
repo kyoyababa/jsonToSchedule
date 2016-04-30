@@ -1,19 +1,19 @@
-var gulp =        require('gulp');
-var plumber =     require('gulp-plumber');
-var sass =        require('gulp-sass');
-var sourcemaps =  require('gulp-sourcemaps');
-var cssmin  =     require('gulp-cssmin');
-var uglify =      require('gulp-uglify');
-var jsonmin =     require('gulp-jsonmin');
-var imagemin =    require('gulp-imagemin');
-var watch =       require('gulp-watch');
+var gulp =         require('gulp');
+var plumber =      require('gulp-plumber');
+var sass =         require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var cssmin  =      require('gulp-cssmin');
+var uglify =       require('gulp-uglify');
+var jsonmin =      require('gulp-jsonmin');
+var imagemin =     require('gulp-imagemin');
+var webserver =    require('gulp-webserver');
+var watch =        require('gulp-watch');
 
 gulp.task('sass', function() {
   gulp.src('assets/_scss/*.scss')
     .pipe(plumber())
-    .pipe(sourcemaps.init())
     .pipe(sass())
-    .pipe(sourcemaps.write('./'))
+    .pipe(autoprefixer())
     .pipe(gulp.dest('assets/_css'));
 });
 
@@ -49,7 +49,14 @@ gulp.task('imagemin', function() {
     .pipe(gulp.dest('assets/images'));
 });
 
-gulp.task('default', function() {
+gulp.task('webserver', function() {
+  gulp.src('./')
+    .pipe(webserver({
+      port: 7000
+    }));
+});
+
+gulp.task('default', ['webserver'], function() {
   gulp.start(['sass']);
   gulp.start(['cssmin']);
   gulp.start(['uglify']);

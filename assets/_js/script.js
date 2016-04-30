@@ -9,18 +9,10 @@ jQuery(function($) {
   const SHOWN_CLASS     = 'shown';
   const HIDDEN_CLASS    = 'hidden';
   const DURATION        = 150;
-  const FIRST_PAGE_ID   = 'jsi-first-page';
-  const SECOND_PAGE_ID  = 'jsi-second-page';
-
+  const SCHEDULES_ID    = 'jsi-schedules';
   const DATE_ERROR      = 'Invalid Date';
   const GMAP_ENDPOINT   = 'https://maps.googleapis.com/maps/api/staticmap?';
-
-  // major DOMs
-  var $header           = $('#jsi-header');
-  var $mainPage         = $('#jsi-main-wrapper');
-  var $firstPage        = $('#' + FIRST_PAGE_ID);
-  var $openTrigger      = $('#jsi-open-trigger');
-  var $secondPage       = $('#' + SECOND_PAGE_ID);
+  var $schedules        = $('#' + SCHEDULES_ID);
 
   // major variants
   var schedules = new Array();
@@ -36,8 +28,6 @@ jQuery(function($) {
     element.removeClass(SHOWN_CLASS);
   }
 
-  $
-
   $.getJSON('./assets/js/schedule.json', function(data) {
     if ( data.googleMapAPIKey ) {
       var gMapAPIKey = data.googleMapAPIKey;
@@ -49,10 +39,6 @@ jQuery(function($) {
 
     $insertAppTitle = function() {
       $('.jsc-app-title').text(data.appTitle);
-    }
-
-    $insertTriggerText = function() {
-      $openTrigger.text(data.triggerText);
     }
 
     $fetchScheduleData = function() {
@@ -79,10 +65,12 @@ jQuery(function($) {
           alert('ERROR: Title in No.' + (i+1) + 'does not have any value.');
           return false;
         }
+
         if ( schedules[i][SCHEDULE_D[1]] == DATE_ERROR || schedules[i][SCHEDULE_D[2]] == DATE_ERROR ) {
           alert('ERROR: you set wrong data / time in schedule No.' + (i+1) + '(' + schedules[i][SCHEDULE_D[0]] + ')' + '. Start and End value must be specified.');
           return false;
         }
+
         if ( schedules[i][SCHEDULE_D[1]] > schedules[i][SCHEDULE_D[2]] ) {
           alert('ERROR: you set earlier date as "Start" than "End" in schedule No.' + (i+1) + '(' + schedules[i][SCHEDULE_D[0]] + ')');
           return false;
@@ -98,24 +86,19 @@ jQuery(function($) {
       }
     }
 
-    $insertDateTextsToFirstPage = function (){
-      var minimumDateText = WEEKDAY[minimumDate.getDay()] + ' / ' + MONTH_NAMES[minimumDate.getMonth()] + ' ' + minimumDate.getDate();
-      var maximumDateText = WEEKDAY[maximumDate.getDay()] + ' / ' + MONTH_NAMES[maximumDate.getMonth()] + ' ' + maximumDate.getDate();
-
-      $('#jsi-from-date').text(minimumDateText);
-      $('#jsi-to-date').text(maximumDateText);
-    }
-
     $renderingBasicDOMs = function () {
       var tourDates = Math.floor((maximumDate - minimumDate) / MS_PER_DAY) + 2;
       var currentDate = new Date(minimumDate);
 
-      var $basicDOM =  '<p><a href="javascript: void(0);" class="cs-prev jsc-back"></a></p>';
-          $basicDOM += '<ol></ol>';
-          $basicDOM += '<p><a href="javascript: void(0);" class="cs-prev jsc-back"></a></p>';
+      var $basicDOM =  '<ol></ol>';
 
-      $firstPage.append($basicDOM);
-      $secondPage.append($basicDOM);
+      // show alert when schedule includes over 10 days
+      if ( tourDates > 10 ) {
+        alert('ERROR: you set ' + tourDates +  ' days in schedule lists but unfortunately this application does not allow over 10 days.');
+        return false;
+      }
+
+      $schedules.append($basicDOM);
 
       for (var i = 0; i < tourDates; i++) {
         if ( i != 0 ) {
@@ -124,24 +107,13 @@ jQuery(function($) {
 
         var currentDateText = WEEKDAY[currentDate.getDay()] + ' / ' + MONTH_NAMES[currentDate.getMonth()] + ' ' + currentDate.getDate() + ' ' + currentDate.getFullYear();
 
-        // insert date for first page
-        var $insert =  '<li class="cs-next" data-month="' + currentDate.getMonth() + '" data-day="' + currentDate.getDate() + '">';
-            $insert +=   '<a href="javascript: void(0);">';
-            $insert +=   '<dl>';
-            $insert +=     '<dt>Day ' + (i + 1) + '</dt>';
-            $insert +=     '<dd>' + currentDateText + '</dd>';
-            $insert +=   '</dl>';
-            $insert +=   '</a>';
-            $insert += '</li>';
-        $firstPage.find('ol').append($insert);
-
         // insert each days page
         var $insert =  '<li data-month="' + currentDate.getMonth() + '" data-day="' + currentDate.getDate() + '">';
             $insert +=   '<h2>' + currentDateText + '</h2>';
             $insert +=   '<ul>';
             $insert +=   '</ul>';
             $insert += '</li>';
-        $secondPage.find('ol').append($insert);
+        $schedules.find('ol').append($insert);
       }
     }
 
@@ -150,7 +122,7 @@ jQuery(function($) {
         var _this = schedules[i];
         var $i = 0;
 
-        $secondPage.find('li').each(function() {
+        $schedules.find('li').each(function() {
           var $_this = $(this);
 
           if (
@@ -192,7 +164,7 @@ jQuery(function($) {
                 $insert +=   '<h3>' + _this[SCHEDULE_D[0]] + '</h3>';
                 $insert +=   '<p class="ps-time"><time>' + startTime + '</time> - <time>' + endTime + '</time> (' + duration + 'mins)</p>';
 
-                if ( gMapAPIKey && _this[SCHEDULE_D[6]] ) {
+                if ( _this[SCHEDULE_D[6]] ) {
                   var $mapLink = '<a href="https://www.google.co.jp/maps/place/' + _this[SCHEDULE_D[6]] + '" target="_blank">Open Map</a>';
                 } else {
                   var $mapLink = null;
@@ -232,6 +204,18 @@ jQuery(function($) {
       });
     }
 
+    $activateSlideToggle = function() {
+      const SHOWN_CLASS = 'shown';
+
+      // automatically open first day's schedule
+      $schedules.find('ol > li').eq(0).addClass(SHOWN_CLASS);
+
+      // activate slideToggle()
+      $schedules.find('ol > li').find('h2').click(function() {
+        $(this).parent('li').toggleClass(SHOWN_CLASS);
+      });
+    }
+
     $rootHrefDispatcher = function() {
       $('.jsc-root').each(function() {
         var $li = $(this).parent('p').parent('li');
@@ -255,7 +239,7 @@ jQuery(function($) {
         var $imageElement = $(this);
         var query = $imageElement.parent('li').find('h3').text();
 
-        if ( query ) {
+        if ( query && flickrAPIKey ) {
           $.ajax({
             type: 'GET',
             url: 'https://www.flickr.com/services/rest/',
@@ -282,70 +266,17 @@ jQuery(function($) {
       });
     }
 
-    $openFirstPage = function() {
-      $openTrigger.click(function() {
-        setTimeout(function() {
-          $addShownClass($mainPage);
-        }, DURATION);
-      })
-    }
-
-    $openSecondPage = function() {
-      $firstPage.find('ol').find('li').click(function() {
-        var indexMonth = $(this).data('month');
-        var indexDay = $(this).data('day');
-
-        $secondPage.animate({
-          scrollTop: 0,
-        }, 0);
-
-        $secondPage.find('ol').find('li').each(function() {
-          if ( $(this).data('month') == indexMonth && $(this).data('day') == indexDay ) {
-            $(this).addClass(SHOWN_CLASS);
-          } else {
-            $(this).removeClass(SHOWN_CLASS);
-          }
-        });
-
-        setTimeout(function() {
-          $addShownClass($secondPage);
-        }, DURATION);
-      });
-    }
-
-    $backToPreviousPage = function() {
-      $('.jsc-back').click(function() {
-        var thisSectionId = $(this).parent('p').parent('section').attr('id');
-
-        if ( thisSectionId == FIRST_PAGE_ID ) {
-          setTimeout(function() {
-            $removeShownClass($mainPage);
-          }, DURATION);
-        } else if ( thisSectionId == SECOND_PAGE_ID ) {
-          setTimeout(function() {
-            $removeShownClass($secondPage);
-          }, DURATION);
-        }
-      })
-    }
-
     $(function() {
       // DOM structures
       $insertAppTitle();
-      $insertTriggerText();
       $fetchScheduleData();
       $calculateMinimumAndMaximumDate();
-      $insertDateTextsToFirstPage();
       $renderingBasicDOMs();
       $renderingEachScheduleDetail();
-      $insertFlickrImage();
       $calculateBlankTimes();
+      $activateSlideToggle();
       $rootHrefDispatcher();
-
-      // view controls
-      $openFirstPage();
-      $openSecondPage();
-      $backToPreviousPage();
+      $insertFlickrImage();
     });
   });
 });

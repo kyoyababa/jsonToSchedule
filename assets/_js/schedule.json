@@ -1,6 +1,5 @@
 {
   "appTitle":        "2016 Tour Schedules in NYC",
-  "triggerText":     "Open Schedules",
   "googleMapAPIKey": "AIzaSyDhUpQU43KfFdTqhZvMKrMdIMuvPWCHXA4",
   "flickrAPIKey":    "f58a7cd0d09f006587a0a17b06594cfb",
 
@@ -13,109 +12,130 @@
       "Where":       "Narita Airport, Japan"
     },
     {
-      "Title":       "Boarding on the air plane at Narita Airport",
+      "Title":       "Boarding on the air plane",
       "Start":       "05/01/2016 15:00",
       "End":         "05/01/2016 17:00",
       "Description": "",
       "Where":       "Narita Airport, Japan"
     },
     {
+      "Title":       "Call to Keiko Bishop",
+      "Start":       "05/01/2016 17:00",
+      "End":         "05/01/2016 17:30",
+      "Description": "212-564-5717",
+      "Where":       "3 Brewster Rd, Newark, NJ 07114"
+    },
+    {
+      "Title":       "Go to Howard's House",
+      "Start":       "05/01/2016 18:00",
+      "End":         "05/01/2016 19:00",
+      "Description": "Phone: 18473121147",
+      "Where":       "1010 Halsey Street, Brooklyn, New York, NY"
+    },
+    {
       "Title":       "the Statue of Liberty",
       "Start":       "05/02/2016 09:00",
       "End":         "05/02/2016 11:30",
-      "Description": "this is our first event!",
+      "Description": "",
       "Where":       "Battery Park, New York, NY"
     },
     {
       "Title":       "Ellis Island",
       "Start":       "05/02/2016 11:30",
       "End":         "05/02/2016 13:30",
-      "Description": "this is our first event!",
+      "Description": "",
       "Where":       "Ellis Island, New York, NY"
     },
     {
       "Title":       "MoMA, The Museum of Modern Art, New York",
       "Start":       "05/02/2016 14:30",
       "End":         "05/02/2016 17:30",
-      "Description": "",
+      "Description": "Yuhei reserved.",
       "Where":       "11 W 53rd St, New York, NY 10019"
     },
     {
       "Title":       "Empier State Building",
       "Start":       "05/02/2016 17:30",
       "End":         "05/02/2016 20:30",
-      "Description": "",
+      "Description": "Baba reserved.",
       "Where":       "350 5th Ave, New York, NY 10118"
     },
     {
       "Title":       "Cleopatra's Needle",
       "Start":       "05/02/2016 21:30",
-      "End":         "05/03/2016 01:00",
-      "Description": "",
+      "End":         "05/02/2016 23:30",
+      "Description": "No reservations.",
       "Where":       "2485 Broadway, New York, NY 10025"
     },
     {
-      "Title":       "Dacota House",
-      "Start":       "05/03/2016 09:00",
-      "End":         "05/03/2016 09:30",
+      "Title":       "Gray's Papaya (Broadway & 72)",
+      "Start":       "05/03/2016 10:00",
+      "End":         "05/03/2016 10:30",
       "Description": "",
+      "Where":       "2090 Broadway, Corner 72nd Street, New York, NY 10023"
+    },
+    {
+      "Title":       "Dacota House",
+      "Start":       "05/03/2016 10:30",
+      "End":         "05/03/2016 10:45",
+      "Description": "Only outside",
       "Where":       "1 W 72nd St, New York, NY 10023"
     },
     {
       "Title":       "American Museum of Natural History",
-      "Start":       "05/03/2016 09:30",
-      "End":         "05/03/2016 10:00",
-      "Description": "",
+      "Start":       "05/03/2016 10:45",
+      "End":         "05/03/2016 11:00",
+      "Description": "Only outside",
       "Where":       "Central Park West & 79th St, New York, NY 10024"
     },
     {
       "Title":       "Central Park, New York",
-      "Start":       "05/03/2016 10:00",
-      "End":         "05/03/2016 11:00",
+      "Start":       "05/03/2016 11:00",
+      "End":         "05/03/2016 12:00",
       "Description": "",
       "Where":       "Central Park, New York, NY"
     },
     {
       "Title":       "Solomon R. Guggenheim Museum",
-      "Start":       "05/03/2016 11:00",
-      "End":         "05/03/2016 14:00",
+      "Start":       "05/03/2016 12:00",
+      "End":         "05/03/2016 15:00",
       "Description": "",
       "Where":       "1071 5th Ave, New York, NY 10128"
     },
     {
       "Title":       "Apple Store, New York",
-      "Start":       "05/03/2016 14:00",
-      "End":         "05/03/2016 15:00",
+      "Start":       "05/03/2016 15:00",
+      "End":         "05/03/2016 15:30",
       "Description": "",
       "Where":       "767 Fifth Avenue, New York, NY 10153"
     },
     {
       "Title":       "Carnegie Hall",
-      "Start":       "05/03/2016 15:00",
-      "End":         "05/03/2016 15:15",
+      "Start":       "05/03/2016 15:30",
+      "End":         "05/03/2016 15:45",
       "Description": "",
       "Where":       "881 7th Ave, New York, NY 10019"
     },
     {
       "Title":       "52nd Street",
-      "Start":       "05/03/2016 15:15",
-      "End":         "05/03/2016 15:30",
-      "Description": "Notable places are here: https://www.wikiwand.com/en/52nd_Street_(Manhattan)#/Notable_places_along_52nd_Street",
+      "Start":       "05/03/2016 15:45",
+      "End":         "05/03/2016 16:00",
+      "Description": "",
       "Where":       "52nd Street, New York, NY"
     },
     {
       "Title":       "Times Square",
-      "Start":       "05/03/2016 15:30",
-      "End":         "05/03/2016 17:00",
-      "Description": "",
+      "Start":       "05/03/2016 16:00",
+      "End":         "05/03/2016 18:30",
+      "Description": "include Times Square Church",
       "Where":       "Times Square, Manhattan, NY 10036"
     },
     {
-      "Title":       "Times Square Church",
+      "Title":       "The Biggest McDonald's in the world",
       "Start":       "05/03/2016 17:00",
-      "End":         "05/03/2016 18:00",
+      "End":         "05/03/2016 17:15",
       "Description": "",
-      "Where":       "237 W 51st St, New York, NY 10019"
+      "Where":       "1560 Broadway, New York City, NY 10036"
     },
     {
       "Title":       "SNARKY PUPPY",
@@ -126,14 +146,21 @@
     },
     {
       "Title":       "Metropolitan Museum",
-      "Start":       "05/04/2016 09:00",
+      "Start":       "05/04/2016 10:00",
       "End":         "05/04/2016 14:00",
-      "Description": "",
+      "Description": "屋上のカフェに行くこと",
       "Where":       "1000 5th Ave, New York, NY 10028"
     },
     {
-      "Title":       "Colombia University",
+      "Title":       "Two Little Red Hens",
       "Start":       "05/04/2016 14:00",
+      "End":         "05/04/2016 14:30",
+      "Description": "",
+      "Where":       "1652 Second Avenue New York NY 10028"
+    },
+    {
+      "Title":       "Colombia University",
+      "Start":       "05/04/2016 14:30",
       "End":         "05/04/2016 15:00",
       "Description": "",
       "Where":       "116th St & Broadway, New York, NY 10027"
@@ -141,14 +168,21 @@
     {
       "Title":       "Cathedral of St. John the Divine",
       "Start":       "05/04/2016 15:00",
-      "End":         "05/04/2016 16:00",
+      "End":         "05/04/2016 15:15",
       "Description": "",
       "Where":       "1047 Amsterdam Ave, New York, NY 10025"
     },
     {
+      "Title":       "Meeting with Walter Bishop.Jr's Wife",
+      "Start":       "05/04/2016 15:15",
+      "End":         "05/04/2016 16:45",
+      "Description": "",
+      "Where":       "400 West 43rd Street, Apt 330, NY, NY 10036"
+    },
+    {
       "Title":       "National Jazz Museum at Harlem",
-      "Start":       "05/04/2016 16:00",
-      "End":         "05/04/2016 19:00",
+      "Start":       "05/04/2016 16:45",
+      "End":         "05/04/2016 18:15",
       "Description": "",
       "Where":       "Ground Floor, 58 W 129th St, New York, NY 10027"
     },
@@ -161,24 +195,31 @@
     },
     {
       "Title":       "Brooklyn Bridge",
-      "Start":       "05/05/2016 09:00",
-      "End":         "05/05/2016 10:30",
+      "Start":       "05/05/2016 10:00",
+      "End":         "05/05/2016 11:30",
       "Description": "",
       "Where":       "Brooklyn Bridge, New York, NY,"
     },
     {
       "Title":       "New York by Gehry",
-      "Start":       "05/05/2016 10:30",
-      "End":         "05/05/2016 11:00",
+      "Start":       "05/05/2016 11:30",
+      "End":         "05/05/2016 12:00",
       "Description": "",
       "Where":       "8 Spruce St, New York, NY 10038"
     },
     {
-      "Title":       "China Town, New York",
-      "Start":       "05/05/2016 11:00",
+      "Title":       "Joe's Shanghai (Chinatown)",
+      "Start":       "05/05/2016 12:00",
+      "End":         "05/05/2016 13:30",
+      "Description": "小籠包を食べる",
+      "Where":       "9 Pell Street New York, New York 10013"
+    },
+    {
+      "Title":       "Katz's Delicatessen",
+      "Start":       "05/05/2016 13:30",
       "End":         "05/05/2016 14:00",
-      "Description": "",
-      "Where":       "China Town, New York, NY"
+      "Description": "if any",
+      "Where":       "205 E Houston St, New York, NY 10002"
     },
     {
       "Title":       "New Museum of Contemporary Art",
@@ -188,43 +229,57 @@
       "Where":       "235 Bowery, New York, NY 10002"
     },
     {
-      "Title":       "Flatiron Building",
-      "Start":       "05/05/2016 14:30",
-      "End":         "05/05/2016 16:30",
+      "Title":       "Washington Square Park",
+      "Start":       "05/05/2016 14:15",
+      "End":         "05/05/2016 15:00",
+      "Description": "Madison Square Parkと同じ日は飽きる？",
+      "Where":       "Washington Square Park"
+    },
+    {
+      "Title":       "New York University",
+      "Start":       "05/05/2016 15:00",
+      "End":         "05/05/2016 15:30",
       "Description": "",
       "Where":       "175 5th Ave, New York, NY 10010"
     },
     {
+      "Title":       "Flatiron Building",
+      "Start":       "05/05/2016 15:30",
+      "End":         "05/05/2016 16:00",
+      "Description": "Only outside",
+      "Where":       "175 5th Ave, New York, NY 10010"
+    },
+    {
       "Title":       "Madison Square Park",
-      "Start":       "05/05/2016 14:30",
-      "End":         "05/05/2016 16:30",
-      "Description": "",
+      "Start":       "05/05/2016 16:00",
+      "End":         "05/05/2016 17:00",
+      "Description": "Washington Square Parkと同じ日は飽きる？",
       "Where":       "Madison Square Park, New York, NY"
     },
     {
       "Title":       "F.A.O Schwaltz",
-      "Start":       "05/05/2016 16:30",
-      "End":         "05/05/2016 17:00",
+      "Start":       "05/05/2016 17:00",
+      "End":         "05/05/2016 17:30",
       "Description": "",
       "Where":       "767 Fifth Ave, at 58th Street, New York City, NY 10153"
     },
     {
       "Title":       "Chelsea Hotel, New York",
-      "Start":       "05/05/2016 17:00",
-      "End":         "05/05/2016 17:30",
+      "Start":       "05/05/2016 17:30",
+      "End":         "05/05/2016 18:00",
       "Description": "",
       "Where":       "222 W 23rd St, New York, NY 10011"
     },
     {
       "Title":       "911 Memorial",
-      "Start":       "05/05/2016 17:30",
-      "End":         "05/05/2016 18:00",
+      "Start":       "05/05/2016 18:00",
+      "End":         "05/05/2016 18:30",
       "Description": "",
       "Where":       "180 Greenwich St, New York, NY 10007"
     },
     {
       "Title":       "World Trade Center",
-      "Start":       "05/05/2016 18:00",
+      "Start":       "05/05/2016 18:30",
       "End":         "05/05/2016 19:00",
       "Description": "",
       "Where":       "World Trade Center, New York, NY"
@@ -232,13 +287,13 @@
     {
       "Title":       "Wall City, New York",
       "Start":       "05/05/2016 19:00",
-      "End":         "05/05/2016 20:00",
+      "End":         "05/05/2016 20:30",
       "Description": "",
       "Where":       "Wall City, New York, NY"
     },
     {
       "Title":       "Matt Umanov Guitars",
-      "Start":       "05/05/2016 20:00",
+      "Start":       "05/05/2016 20:30",
       "End":         "05/05/2016 21:00",
       "Description": "",
       "Where":       "273 Bleecker St, New York, NY 10014"
@@ -252,38 +307,45 @@
     },
     {
       "Title":       "United Nations Headquarters",
-      "Start":       "05/06/2016 09:30",
-      "End":         "05/06/2016 10:00",
+      "Start":       "05/06/2016 10:00",
+      "End":         "05/06/2016 10:30",
       "Description": "",
       "Where":       "46th Street, New York, NY 10017"
     },
     {
       "Title":       "Daily News Building",
-      "Start":       "05/06/2016 10:00",
-      "End":         "05/06/2016 10:30",
+      "Start":       "05/06/2016 10:30",
+      "End":         "05/06/2016 11:00",
       "Description": "",
       "Where":       "220 East 42nd Street, New York City"
     },
     {
       "Title":       "Chrysler Building",
-      "Start":       "05/06/2016 10:30",
-      "End":         "05/06/2016 11:00",
+      "Start":       "05/06/2016 11:00",
+      "End":         "05/06/2016 11:30",
       "Description": "",
       "Where":       "405 Lexington Ave, New York, NY 10174"
     },
     {
       "Title":       "Grand Central Station",
-      "Start":       "05/06/2016 11:00",
-      "End":         "05/06/2016 12:00",
+      "Start":       "05/06/2016 11:30",
+      "End":         "05/06/2016 12:15",
       "Description": "",
       "Where":       "89 E 42nd St, New York, NY 10017"
     },
     {
       "Title":       "St. Patrick's Cathedral",
-      "Start":       "05/06/2016 12:00",
-      "End":         "05/06/2016 12:30",
+      "Start":       "05/06/2016 12:15",
+      "End":         "05/06/2016 12:20",
       "Description": "",
       "Where":       "5th Ave, New York, NY 10022"
+    },
+    {
+      "Title":       "Tifany & Co., New York",
+      "Start":       "05/06/2016 12:20",
+      "End":         "05/06/2016 12:30",
+      "Description": "Only outside",
+      "Where":       "727 5th Ave., New York, NY 10022"
     },
     {
       "Title":       "Rockefeller Center",
@@ -293,11 +355,11 @@
       "Where":       "45 Rockefeller Plaza, New York, NY 10111"
     },
     {
-      "Title":       "High Liner",
+      "Title":       "High Line",
       "Start":       "05/06/2016 12:45",
-      "End":         "05/06/2016 13:00",
+      "End":         "05/06/2016 14:00",
       "Description": "",
-      "Where":       "40.7483,-74.005"
+      "Where":       "High Line, New York, NY"
     },
     {
       "Title":       "Lincoln Center",
@@ -309,14 +371,14 @@
     {
       "Title":       "Chelsea Market",
       "Start":       "05/06/2016 15:00",
-      "End":         "05/06/2016 16:30",
+      "End":         "05/06/2016 17:00",
       "Description": "",
       "Where":       "75 9th Ave, New York, NY 10011"
     },
     {
       "Title":       "IAC Building",
-      "Start":       "05/06/2016 16:30",
-      "End":         "05/06/2016 17:00",
+      "Start":       "05/06/2016 17:00",
+      "End":         "05/06/2016 17:30",
       "Description": "",
       "Where":       "555 W 18th St, New York, NY 10011"
     },
@@ -329,66 +391,10 @@
     },
     {
       "Title":       "Newark International Airport",
-      "Start":       "05/07/2016 09:00",
+      "Start":       "05/07/2016 09:30",
       "End":         "05/07/2016 11:00",
       "Description": "",
       "Where":       "3 Brewster Rd, Newark, NJ 07114"
-    },
-    {
-      "Title":       "Walter Bishop.Jr's Wife",
-      "Start":       "05/08/2016 00:00",
-      "End":         "05/08/2016 00:01",
-      "Description": "だいすけアップデート待ち",
-      "Where":       "New York"
-    },
-    {
-      "Title":       "Katz's Delicatessen",
-      "Start":       "05/08/2016 00:00",
-      "End":         "05/08/2016 00:01",
-      "Description": "1888年創業の、ベッサラビアとルーマニアからの東欧ユダヤ系移民によって19世紀後半にアメリカ合衆国にもたらされたパストラミなどのコーシャーのユダヤ料理を売る、ニューヨークで最も古いデリカテッセン。店内には著名人のサインが壁一面飾られていて、映画『恋人たちの予感』の舞台になったことでも知られる。人気メニューのパストラミ・サンドイッチはニューヨークを代表する名物料理。",
-      "Where":       "マンハッタン区イースト・ハウストン・ストリート205号"
-    },
-    {
-      "Title":       "Clinton Street Baking Co. & Restaurant",
-      "Start":       "05/08/2016 00:00",
-      "End":         "05/08/2016 00:01",
-      "Description": "パンケーキ。表参道にもあるから別にそこまでではない。",
-      "Where":       "4 Clinton Street New York, NY 10002"
-    },
-    {
-      "Title":       "Gray's Papaya (Broadway & 72)",
-      "Start":       "05/08/2016 00:00",
-      "End":         "05/08/2016 00:01",
-      "Description": "ニューヨークでも老舗ホットドック店。ホットドッグ二個+ジュースセットが4.95ドルとニューヨークにしてはかなり安い価格。",
-      "Where":       "2090 Broadway, Corner 72nd Street, New York, NY 10023"
-    },
-    {
-      "Title":       "Holly's house",
-      "Start":       "05/08/2016 00:00",
-      "End":         "05/08/2016 00:01",
-      "Description": "ティファニーで朝食をのロケ地",
-      "Where":       "169 East 71st St., New York, NY 10021"
-    },
-    {
-      "Title":       "Tifany & Co., New York",
-      "Start":       "05/08/2016 00:00",
-      "End":         "05/08/2016 00:01",
-      "Description": "ティファニーで朝食をのロケ地",
-      "Where":       "727 5th Ave., New York, NY 10022"
-    },
-    {
-      "Title":       "Two Little Red Hens",
-      "Start":       "05/08/2016 00:00",
-      "End":         "05/08/2016 00:01",
-      "Description": "高級住宅街のアッパーイーストにあるスイーツショップ。地元に根ざしていながらニューヨーク中にファンがいる。チョコレートプディングの入ったブルックリン・ブラックアウトと言う名前のカップケーキとニューヨークチーズケーキが特に評判。",
-      "Where":       "1652 Second Avenue New York NY 10028"
-    },
-    {
-      "Title":       "The Biggest McDonald's in the world",
-      "Start":       "05/08/2016 00:00",
-      "End":         "05/08/2016 00:01",
-      "Description": "世界一でかいってさ。",
-      "Where":       "1560 Broadway, New York City, NY 10036"
     }
   ]
 }

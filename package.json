@@ -1,0 +1,23 @@
+{
+  "name": "json-to-schedule",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyoyababa/newyork-schedule.git"
+  },
+  "author": "kyoyababa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kyoyababa/newyork-schedule/issues"
+  },
+  "homepage": "https://github.com/kyoyababa/newyork-schedule#readme",
+  "devDependencies": {
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.1"
+  }
+}

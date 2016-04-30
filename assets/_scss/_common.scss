@@ -1,28 +1,50 @@
 body {
-  overflow: hidden;
   background-color: #F6F6F6;
   color: #404040;
 }
 
-body,
-body > * {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+h1,
+h2,
+h3 {
+  position: relative;
 }
 
 a {
   color: #4CC3D9;
 }
 
+.cs-spinner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #FFFFFF;
+  &:before {
+    content: 0;
+    position: fixed;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    display: block;
+    border: 2px solid;
+    border-color: #4CC3D9 #4CC3D9 transparent;
+    border-radius: 100%;
+    animation: spinner 1000ms linear inifinite;
+  }
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
 .cs-button {
   padding: 8px 16px;
   border: 1px solid #4CC3D9;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
+  border-radius: 4px;
   font-size: 20px;
   box-shadow: 0 0 2px #666666;
   color: #4CC3D9;
@@ -39,9 +61,7 @@ a {
   display: inline-block;
   width: 16px;
   height: 16px;
-  -webkit-background-size: 100%;
-       -o-background-size: 100%;
-          background-size: 100%;
+  background-size: 100%;
 }
 
 .cs-prev:before {
